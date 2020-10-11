@@ -5,20 +5,31 @@ class User:
     '''
 
     list = []
-    def__init__(self, name, password)
+
+    def __init__(self,username, password):
+
         self.name = name
         self.password = password
 
+    print("Welcome to Password LocK. select one of the below options to continue:")
+    print("\n1. Login \n2. Register new account \n3. Exit")
+    user_option = input()
 
-self.name = 'rodgers'
-print('')
+    if user_option == "1":
+        print("Login")
+    elif user_option == "2":
+        create_account()
+    elif user_option == "3":
+        exit()
+    else:
+        print("Invalid option")
 
 
-    # def save_details(self):
-    #     '''
-    #     method for saving object to the users list
-    #     '''
-    # User.list.append(self)
-    
-    # self.name = ('rodgers','come')
-    # print(name)
+
+
+
+
+
+
+
+ 
