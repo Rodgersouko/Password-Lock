@@ -43,11 +43,11 @@ class User:
     user_option = input()
 
     if user_option == "1":
-            print("Create a Password Locke Account")
+            print("Enter your account details")
             print ('\n')
-            account_name = input('Account name:')
+            account_name = input('Account: ')
             print ('\n')
-            user_name = input('User name:')
+            user_name = input('User name: ')
             print ('\n')
     elif user_option == "2":
             user_name = input('New User Name : ')
