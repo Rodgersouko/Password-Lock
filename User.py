@@ -28,7 +28,13 @@ class User:
         function for deleting objects from list
         '''
 
-        User.list.remove(self)    
+        User.list.remove(self)
+        
+class Credentials():
+    """
+    credentials class to create new objects of credentials
+    """
+    credentials_list = []           
 
     @classmethod
     def display_accounts(cls):
