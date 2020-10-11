@@ -48,7 +48,18 @@ class User:
             account_name = input('Account: ')
             print ('\n')
             user_name = input('User name: ')
-            print ('\n')
+            # print('\n')
+            while True:
+                print("\n1. To type your own pasword:\n2. To generate random Password")
+                password_Choice = input().lower()
+                if password_Choice == '1':
+                    password = input("Enter Password")
+                    break
+                elif password_Choice == '2':
+                    password = generate_Password()
+                    break
+                else:
+                    print("Invalid password please try again")
     elif user_option == "2":
             user_name = input('New User Name : ')
             # print('/n')
