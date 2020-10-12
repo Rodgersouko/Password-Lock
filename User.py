@@ -34,7 +34,32 @@ class Credentials():
     """
     credentials class to create new objects of credentials
     """
-    credentials_list = []           
+    credentials_list = []
+
+    def __init__(self,account,userName, password):
+ 
+        self.account = account
+        self.userName = userName
+        self.password = password
+
+    def save_details(self):
+        """
+        function for saving user objects to credential-list
+        """
+        Credentials.credentials_list.append(self)
+
+    def delete_credentials(self):
+        """
+        function for deleting objects from credential_list
+        """
+        Credentials.credentials_list.remove(self)
+
+    @classmethod
+    def display_credentials(cls):
+        """
+        function returning items in the credentials list
+        """
+        return cls.credentials_list       
 
     @classmethod
     def display_accounts(cls):
