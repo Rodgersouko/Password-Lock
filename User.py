@@ -1,3 +1,5 @@
+from credential import Credentials
+
 class User:
 
     '''
@@ -21,6 +23,46 @@ class User:
 
         User.list.append(self)
 
+    @classmethod
+    def find_credential(cls, username):
+        '''
+        Method that checks if Credentials exist in our list
+
+        '''
+
+        for credential in Credential.credential_list:
+            if credential.credential_name == name:
+                return True
+
+        return False
+    
+
+    @classmethod
+    def display_user(cls):
+        '''
+        Method that returns the user list
+        '''
+        
+        return cls.list
+
+    @classmethod
+    def user_exist(cls, username):
+        '''
+        Method that checks if a user exists in the user list
+        
+        Args:
+            name: name of the user to search
+            
+        Returns:
+            Boolean: true/false depending if the user exists
+            
+        '''
+        
+        for user in cls.list:
+            if user.username == name:
+                return True
+            
+        return False
 
     def delete_user(self):
 
@@ -30,47 +72,11 @@ class User:
 
         User.list.remove(self)
         
-class Credentials():
-    """
-    credentials class to create new objects of credentials
-    """
-    credentials_list = []
 
-    def __init__(self,account,userName, password):
- 
-        self.account = account
-        self.userName = userName
-        self.password = password
-
-    def save_details(self):
-        """
-        function for saving user objects to credential-list
-        """
-        Credentials.credentials_list.append(self)
-
-    def delete_credentials(self):
-        """
-        function for deleting objects from credential_list
-        """
-        Credentials.credentials_list.remove(self)
-
-    @classmethod
-    def display_credentials(cls):
-        """
-        function returning items in the credentials list
-        """
-        return cls.credentials_list       
-
-    @classmethod
-    def display_accounts(cls):
-        '''
-        function that returns the list
-        '''
-        return cls.list    
 
         
     print("Welcome to Password LocK. select one of the below options to continue:")
-    print("\n1. Login \n2. Register new account \n3. Exit")
+    print("\n1. Login \n2. Register new account \n3. View accounts\n4. Exit")
     user_option = input()
 
     if user_option == "1":
@@ -91,13 +97,51 @@ class Credentials():
                     break
                 else:
                     print("Invalid password please try again")
+                    
     elif user_option == "2":
-            user_name = input('New User Name : ')
-            # print('/n')
-            pwd = input('Password : ')
-            print ('\n')
+            # user_name = input('New User Name : ')
+            # # print('/n')
+            # pwd = input('Password : ')
+            # print('\n')
+            print(" ")
+            print("-" * 100)
+            print("      CREATE A NEW ACCOUNT!")
+            print(" ")
+            print("what is your first name?..")
+            print(" ")
+            f_name =input()
+            print("What is your middle name?..")
+            print(" ")
+            m_name= input()
+            print("what is your email address?..")
+            print(" ")
+            e_mail= input()
+            print ("what is your facebook password?..")
+            print(" ")
+            face_bookp =input()
+            print("what is your email password?..")
+            print(" ")
+            e_mailp= input()
+            print('\n')
+            print(f"New Account  {f_name } { m_name} { face_bookp } has been created")
+            print('\n')
 
+            
     elif user_option == "3":
+            print(" ")
+            print(" ")
+            print("TO GENERATE A PASSWORD ADD IN YOUR FIRST NAME AND FACEBOOK BELOW!!")
+            print(" ")
+            list_of_inputs = [credentials for credentials  in input()]
+
+            # list_of_inputs= list(list_of_inputs)
+            list_of_inputs.reverse()
+
+
+
+            print(list_of_inputs)
+            
+    elif user_option == "4":
             print(f"Have a nice day...")
             # break
     else:
